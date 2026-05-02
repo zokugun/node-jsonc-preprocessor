@@ -1,25 +1,27 @@
-import fs from 'fs';
 import path from 'path';
-import { expect } from 'chai';
+import fse from '@zokugun/fs-extra-plus/sync';
 import { globbySync } from 'globby';
+import { expect, it } from 'vitest';
 import yaml from 'yaml';
 import { transform } from '../src/index.js';
 
-describe('transform', () => {
-	function prepare(file: string) {
-		const name = path.basename(file).slice(0, path.basename(file).lastIndexOf('.'));
-		const data = yaml.parse(fs.readFileSync(file, 'utf8')) as { input: string; output: string; types?: Record<string, string>; args?: Record<string, string> };
+function prepare(file: string) {
+	const name = path.basename(file).slice(0, path.basename(file).lastIndexOf('.'));
 
-		it(`${name}`, () => {
-			const result = transform(data.input, data.types, data.args ?? {});
+	const content = fse.readFile(file, 'utf8');
+	expect(content.fails).to.be.false;
 
-			expect(result).to.eql(data.output);
-		});
-	}
+	const data = yaml.parse(content.value!) as { input: string; output: string; types?: Record<string, string>; args?: Record<string, string> };
 
-	const files = globbySync('test/fixtures/transform/*.yml');
+	it(`${name}`, () => {
+		const result = transform(data.input, data.types, data.args ?? {});
 
-	for(const file of files) {
-		prepare(file);
-	}
-});
+		expect(result).to.eql(data.output);
+	});
+}
+
+const files = globbySync('test/fixtures/transform/*.yml');
+
+for(const file of files) {
+	prepare(file);
+}

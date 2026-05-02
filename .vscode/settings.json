@@ -3,7 +3,6 @@
 		".husky",
 	],
 	"search.exclude": {
-		".test/**": true,
 		"lib/**": true,
 		"yarn.lock": true,
 		"package-lock.json": true,
