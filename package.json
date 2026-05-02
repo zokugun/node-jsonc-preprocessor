@@ -1,7 +1,7 @@
 {
 	"name": "@zokugun/jsonc-preprocessor",
 	"description": "Disable/enable/ignore blocks based on rules found in the JSONC text",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"author": {
 		"name": "Baptiste Augrain",
 		"email": "daiyam@zokugun.org"
