@@ -1,4 +1,4 @@
-import { transform as _transform } from './tranform';
+import { transform as _transform } from './tranform.js';
 
 export function comment(input: string): string {
 	return _transform(input, {}, {}, false);

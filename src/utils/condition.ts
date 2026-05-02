@@ -1,5 +1,5 @@
-import { matchPair } from '@daiyam/balanced-pairs';
-import compareVersions, { CompareOperator } from 'compare-versions';
+import { matchPair } from '@zokugun/balanced-pairs';
+import compareVersions, { type CompareOperator } from 'compare-versions';
 
 const DIRECTIVE_CONFIG = {
 	pairs: {
@@ -48,14 +48,19 @@ export function condition(match: RegExpExecArray, types: Record<string, string>,
 				condition = condition.slice(match[0].length);
 
 				switch(operator) {
-					case '?':
-						result = typeof args[identifier] !== 'undefined';
+					case '?': {
+						result = args[identifier] !== undefined;
 						break;
-					case '!?':
-						result = typeof args[identifier] === 'undefined';
+					}
+
+					case '!?': {
+						result = args[identifier] === undefined;
 						break;
-					default:
+					}
+
+					default: {
 						return false;
+					}
 				}
 			}
 			else {
@@ -111,13 +116,17 @@ export function condition(match: RegExpExecArray, types: Record<string, string>,
 
 				if(types[identifier] === 'version') {
 					switch(operator) {
-						case '=':
+						case '=': {
 							result = operands.includes(value);
 							break;
-						case '!=':
+						}
+
+						case '!=': {
 							result = !operands.includes(value);
 							break;
-						default:
+						}
+
+						default: {
 							for(const operand of operands) {
 								if(compareVersions.compare(value, operand, operator as CompareOperator)) {
 									result = true;
@@ -126,18 +135,24 @@ export function condition(match: RegExpExecArray, types: Record<string, string>,
 							}
 
 							return false;
+						}
 					}
 				}
 				else {
 					switch(operator) {
-						case '=':
+						case '=': {
 							result = operands.includes(value);
 							break;
-						case '!=':
+						}
+
+						case '!=': {
 							result = !operands.includes(value);
 							break;
-						default:
+						}
+
+						default: {
 							return false;
+						}
 					}
 				}
 			}

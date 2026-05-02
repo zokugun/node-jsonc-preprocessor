@@ -1,5 +1,5 @@
-import { matchEndOfValue } from './match-end-of-value';
-import { rewriteLine } from './rewrite-line';
+import { matchEndOfValue } from './match-end-of-value.js';
+import { rewriteLine } from './rewrite-line.js';
 
 const UNCOMMENT_REGEX = /^(\s*)(?:\/\/\s?)?(.*)$/;
 

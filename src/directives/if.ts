@@ -1,5 +1,5 @@
-import { State, StateType } from '../types/state';
-import { indent } from '../utils/indent';
+import { type State, StateType } from '../types/state.js';
+import { indent } from '../utils/indent.js';
 
 export function directive(condition: boolean, input: string[], line: number, output: string[], stack: State[]): number {
 	output.push(input[line]);

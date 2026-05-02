@@ -1,8 +1,8 @@
-import { State } from '../types/state';
-import { comment } from '../utils/comment';
-import { indent } from '../utils/indent';
-import { skipComments } from '../utils/skip-comments';
-import { uncomment } from '../utils/uncomment';
+import { type State } from '../types/state.js';
+import { comment } from '../utils/comment.js';
+import { indent } from '../utils/indent.js';
+import { skipComments } from '../utils/skip-comments.js';
+import { uncomment } from '../utils/uncomment.js';
 
 export function enable(condition: boolean, input: string[], line: number, output: string[], stack: State[]): number {
 	const directive = input[line];

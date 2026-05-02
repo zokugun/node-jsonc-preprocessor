@@ -1,4 +1,4 @@
-import { matchEndOfValue } from './match-end-of-value';
+import { matchEndOfValue } from './match-end-of-value.js';
 
 const COMMENT_REGEX = /^(\s*)(\/\/\s*)?(.*)$/;
 

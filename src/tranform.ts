@@ -1,9 +1,9 @@
-import { directives } from './directives';
-import { Directive } from './types/directive';
-import { State, StateType } from './types/state';
-import { comment } from './utils/comment';
-import { condition } from './utils/condition';
-import { uncomment } from './utils/uncomment';
+import { directives } from './directives/index.js';
+import { type Directive } from './types/directive.js';
+import { type State, StateType } from './types/state.js';
+import { comment } from './utils/comment.js';
+import { condition } from './utils/condition.js';
+import { uncomment } from './utils/uncomment.js';
 
 const DIRECTIVE_REGEX = /^\s*\/\/\s*#([a-z-]+)\b\s*((\()?.*)$/i;
 

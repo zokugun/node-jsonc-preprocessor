@@ -6,9 +6,9 @@ export enum StateType {
 	ROOT = 'root',
 }
 
-export interface State {
+export type State = {
 	indent: string;
 	rewrite: boolean;
 	type: StateType;
 	value: boolean;
-}
+};

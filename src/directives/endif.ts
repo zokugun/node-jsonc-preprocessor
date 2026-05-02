@@ -1,4 +1,4 @@
-import { State, StateType } from '../types/state';
+import { type State, StateType } from '../types/state.js';
 
 export function endif(condition: boolean, input: string[], line: number, output: string[], stack: State[]): number {
 	output.push(input[line]);

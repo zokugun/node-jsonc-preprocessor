@@ -1,4 +1,4 @@
-import { matchPair } from '@daiyam/balanced-pairs';
+import { matchPair } from '@zokugun/balanced-pairs';
 
 const PROPERTY_REGEX = /\s*:\s*/;
 const START_REGEX = /^\s*(\/\/\s?)?\s*([[{"])/i;
@@ -51,9 +51,9 @@ export function matchEndOfValue(input: string[], line: number, offset = 0): numb
 			return line;
 		}
 
-		const propMatch = PROPERTY_REGEX.exec(input[line].slice(pair.column));
-		if(propMatch) {
-			return matchEndOfValue(input, line, pair.column + propMatch[0].length - 1);
+		const propertyMatch = PROPERTY_REGEX.exec(input[line].slice(pair.column));
+		if(propertyMatch) {
+			return matchEndOfValue(input, line, pair.column + propertyMatch[0].length - 1);
 		}
 	}
 	else if(match[2] === '[' || match[2] === '{') {

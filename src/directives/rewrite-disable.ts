@@ -1,4 +1,4 @@
-import { State, StateType } from '../types/state';
+import { type State, StateType } from '../types/state.js';
 
 export function rewriteDisable(condition: boolean, input: string[], line: number, output: string[], stack: State[]): number {
 	output.push(input[line]);

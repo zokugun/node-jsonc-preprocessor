@@ -1,12 +1,12 @@
-import { elif } from './elif';
-import { directive as elseDirective } from './else';
-import { enable } from './enable';
-import { endif } from './endif';
-import { directive as ifDirective } from './if';
-import { ignore } from './ignore';
-import { rewriteDisable } from './rewrite-disable';
-import { rewriteEnable } from './rewrite-enable';
-import { rewriteLine } from './rewrite-line';
+import { elif } from './elif.js';
+import { directive as elseDirective } from './else.js';
+import { enable } from './enable.js';
+import { endif } from './endif.js';
+import { directive as ifDirective } from './if.js';
+import { ignore } from './ignore.js';
+import { rewriteDisable } from './rewrite-disable.js';
+import { rewriteEnable } from './rewrite-enable.js';
+import { rewriteLine } from './rewrite-line.js';
 
 export const directives = {
 	else: elseDirective,
