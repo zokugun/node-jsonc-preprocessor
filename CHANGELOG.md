@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.4.1 | 2023-06-29
+- fix conflicting types
+
 ## v0.4.0 | 2023-05-02
 - rename library
 - upgrade dev tools
