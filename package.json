@@ -24,7 +24,6 @@
 	},
 	"main": "lib/cjs/index.cjs",
 	"module": "lib/esm/index.mjs",
-	"types": "lib/index.d.ts",
 	"typesVersions": {
 		"*": {
 			".": [
